@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="XTMusic:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="XTMusic.war">
+      <element id="artifact" artifact-name="XTMusic:war exploded" />
+    </root>
+  </artifact>
+</component>
