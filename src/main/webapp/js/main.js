@@ -171,6 +171,9 @@ $(function () {
 
     //云音乐>点击删除按钮
     $(".listmain table:eq(1)").on("click", "#del", function () {
+        if(!confirm("你确定要把歌曲从云端删除吗？")){
+            return;
+        }
         var num = $(this).parent().prev().prev().text();
         $.ajax({
             url: "musicAction/delMusic",
@@ -471,7 +474,7 @@ function sign_in(who) {
             //判断登录是否失败
             if (data.uno == 0) {
                 if (who == ".sign_in") {
-                    alert("登录失败");
+                    alert("账号或密码错误");
                 } else {
                     alert("用户名已存在");
                 }
