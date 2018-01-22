@@ -37,11 +37,11 @@ public class UserService {
         String pwd = user.getUpwd().replace("'","''").replace("\"","\"\"");
         //通过账号密码登录
         String hql = "from User where uacc='" + acc + "' and " +
-                "upwd='" + pwd + "' and ustatus=1";
+                "upwd='" + pwd + "'";
         //通过cookie登录
-        if(user.getUcookie() != null && user.getUcookie().length() > 0){
+/*        if(user.getUcookie() != null && user.getUcookie().length() > 0){
             hql = "from User where ucookie='"+user.getUcookie()+"' and ustatus=1";
-        }
+        }*/
         List list = userDao.selUser(hql);
         if (list != null && list.size() == 1){
             return (User)list.get(0);
