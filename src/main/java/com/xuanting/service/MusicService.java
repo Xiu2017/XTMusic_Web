@@ -26,9 +26,9 @@ public class MusicService{
     }
 
     //根据名称查询歌曲是否存在
-    public boolean musicExist(Music music){
+    public boolean musicExist(String name, int uno){
         //通过账号密码登录
-        String hql = "from Music where name='" + music.getName() + "'";
+        String hql = "from Music where name='" + name + "' and uno="+uno;
         List list = musicDao.selMusic(hql);
         if (list != null && list.size() > 0){
             return true;

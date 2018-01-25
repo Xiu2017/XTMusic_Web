@@ -48,7 +48,6 @@ public class MusicAction {
     //下载音乐
     @RequestMapping("/downloadMusic")
     public ResponseEntity<byte[]> downloadMusic(String path, HttpSession session) throws IOException {
-        System.out.println(path);
         if(path != null){
             //获取要下载的文件路径
             String basePath=session.getServletContext().getRealPath(path);

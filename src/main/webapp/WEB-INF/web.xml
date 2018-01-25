@@ -37,8 +37,8 @@
             <param-name>contextConfigLocation</param-name>
             <!--默认名称为ServletName-servlet.xml -->
             <param-value>
-                /WEB-INF/springmvc-servlet.xml,
-                /WEB-INF/applicationContext.xml
+                /WEB-INF/applicationContext.xml,
+                /WEB-INF/springmvc-servlet.xml
             </param-value>
         </init-param>
         <!-- 启动顺序，数字越小，启动越早 -->

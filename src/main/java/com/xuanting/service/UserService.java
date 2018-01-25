@@ -23,6 +23,9 @@ public class UserService {
 
     //用户注册
     public User addUser(User user){
+        if(user.getUacc() == null || user.getUacc().length() == 0 || user.getUpwd() == null || user.getUpwd().length() == 0){
+            return user;
+        }
         User u = userDao.addUser(user);
         if(u == null){
             return user;

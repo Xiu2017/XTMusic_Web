@@ -287,6 +287,7 @@ function selMusic() {
                 tr += "<td>" + data[i].time + "</td></tr>";
                 $(".listmain table:eq(1)").append(tr);
             }
+            $("#cloud").text("云端音乐 ["+len+"]");
             if (name == null || name == "") {
                 return;
             }
@@ -585,7 +586,7 @@ function scanFiles(e) {
     //如果歌曲数量不为0，添加歌曲到列表
     if (musics.length > count) {
         $(".emptylist").hide();
-        $("#local").html("本地音乐 " + musics.length + "<span class='addlocal' onclick='clickAdd()'>＋</span>");
+        $("#local").html("本地音乐 [" + musics.length + "]<span class='addlocal' onclick='clickAdd()'>＋</span>");
 
         //创建带编号和文件名的列表
         for (var i = count; i < musics.length; i++) {
@@ -709,7 +710,7 @@ function getInfo(info) {
 function resetNumber() {
     var $tr = $(".listmain table:eq(0) tr:not(:first)");
     count = $tr.length;
-    $("#local").html("本地音乐 " + count + "<span class='addlocal' onclick='clickAdd()'>＋</span>");
+    $("#local").html("本地音乐 [" + count + "]<span class='addlocal' onclick='clickAdd()'>＋</span>");
     $tr.each(function (i) {
         $(this).find("td:eq(0)").text(i);
         $(this).find("td:eq(1)").text(PrefixInteger(i + 1, count.toString().length));

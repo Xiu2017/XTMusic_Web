@@ -1,6 +1,6 @@
 package com.xuanting.web;
 
-import com.xuanting.Utils.FileUtils;
+import com.xuanting.utils.FileUtils;
 import com.xuanting.entity.Music;
 import com.xuanting.entity.User;
 import com.xuanting.service.MusicService;
@@ -41,7 +41,7 @@ public class UploadAction {
             String basePath = session.getServletContext().getRealPath("/Music");
             String realName=mfile.getOriginalFilename();//真实上传的文件名
             music.setName(realName);
-            if(musicService.musicExist(music)){
+            if(musicService.musicExist(music.getName(), user.getUno())){
                 return "-2";
             }
             //执行上传操作

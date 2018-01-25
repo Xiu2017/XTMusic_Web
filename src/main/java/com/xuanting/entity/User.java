@@ -1,7 +1,8 @@
 package com.xuanting.entity;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +41,7 @@ public class User implements Serializable{
         this.uno = uno;
     }
 
-    @NotNull
+    @NotBlank
     public String getUacc() {
         return uacc;
     }
@@ -49,7 +50,7 @@ public class User implements Serializable{
         this.uacc = uacc;
     }
 
-    @NotNull
+    @NotBlank
     public String getUpwd() {
         return upwd;
     }
